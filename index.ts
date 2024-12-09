@@ -11,7 +11,7 @@ readme += "Follow the <a href=\"https://docs.vencord.dev/installing/custom-plugi
 for (const file of files) {
     const { default: { name, description }} = await import(`./${file}`);
 
-    readme += `## ${name} <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}"><kbd>Download</kbd></a>\n\n`
+    readme += `## ${name} <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}"><kbd>Download</kbd></a>\n`
     readme += `${description}\n\n`;
 }
 
