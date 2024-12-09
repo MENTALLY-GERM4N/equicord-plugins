@@ -1,12 +1,6 @@
 # M€NT4LLY G€RM4N Vencord Plugins
 
-## Open Optimizer
-
+## Open Optimizer <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/openOptimizer/index.ts"><kbd>Download</kbd></a>\n
 Ports OpenAsar's optimizer code.
-<a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/openOptimizer/index.ts">Download Open Optimizer</a>
-
-## Disable Animations
-
+## Disable Animations <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/disableAnimations/index.ts"><kbd>Download</kbd></a>\n
 Disables most of Discord's animations.
-<a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/disableAnimations/index.ts">Download Disable Animations</a>
-

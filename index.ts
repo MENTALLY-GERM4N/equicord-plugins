@@ -9,9 +9,8 @@ let readme = "# M€NT4LLY G€RM4N Vencord Plugins\n\n";
 for (const file of files) {
     const { default: { name, description }} = await import(`./${file}`);
 
-    readme += `## ${name}\n\n`
+    readme += `## ${name} <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}"><kbd>Download</kbd></a>\\n\n`
     readme += `${description}\n`;
-    readme += `<a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}">Download ${name}</a>\n\n`;
 }
 
 await write("README.md", readme);
