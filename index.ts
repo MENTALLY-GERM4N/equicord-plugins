@@ -11,7 +11,7 @@ for (const file of files) {
 
     readme += `## ${name}\n\n`
     readme += `${description}\n`;
-    readme += `<a download="${file.split("\\")[0]}.ts" href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}">Download ${name}</a>\n\n`;
+    readme += `<a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}">Download ${name}</a>\n\n`;
 }
 
 await write("README.md", readme);
