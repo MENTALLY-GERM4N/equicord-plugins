@@ -1,6 +1,6 @@
 import { $, write, Glob } from "bun";
 
-const glob = new Glob("*/index.ts");
+const glob = new Glob("*/index.ts*");
 
 const files = glob.scanSync(".");
 
