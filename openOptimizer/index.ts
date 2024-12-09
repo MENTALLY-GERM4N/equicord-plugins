@@ -23,7 +23,11 @@ let _appendChild: <T extends Node>(child: T) => T;
 
 
 const optimize = orig => function (...args) {
-    if (typeof args[0].className === 'string' && (args[0].className.indexOf('activity') !== -1))
+    console.log("!!!!!!!!!!OPTIMIZE", args[0]);
+    if (typeof args[0].className === 'string' && (args[0].className.indexOf('activity') !== -1 ||
+        args[0].className.indexOf('subText') !== -1 ||
+        args[0].className.indexOf('botText') !== -1 ||
+        args[0].className.indexOf('clanTag') !== -1))
         // @ts-ignore
         return setTimeout(() => orig.apply(this, args), 100);
 
