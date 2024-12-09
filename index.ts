@@ -12,7 +12,7 @@ for (const file of files) {
     const { default: { name, description }} = await import(`./${file}`);
 
     readme += `## ${name} <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/${file.replaceAll("\\", "/")}"><kbd>Download</kbd></a>\n\n`
-    readme += `${description}\n`;
+    readme += `${description}\n\n`;
 }
 
 await write("README.md", readme);
