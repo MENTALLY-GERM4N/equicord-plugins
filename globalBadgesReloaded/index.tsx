@@ -102,7 +102,7 @@ const showCustom = () => Vencord.Settings.plugins.GlobalBadges.showCustom;
 export default definePlugin({
     name: "Global Badges Reloaded",
     description: "Fork of Global Badges that runs on Cloudflare Workers.",
-    authors: [{ name: "domi.btnr", id: 354191516979429376n }],
+    authors: [{ name: "S€th", id: 1273447359417942128n }],
 
     start: () => addBadge(Badge),
     stop: () => removeBadge(Badge),
