@@ -23,7 +23,6 @@ let _appendChild: <T extends Node>(child: T) => T;
 
 
 const optimize = orig => function (...args) {
-    console.log("!!!!!!!!!!OPTIMIZE", args[0]);
     if (typeof args[0].className === 'string' && (args[0].className.indexOf('activity') !== -1 ||
         args[0].className.indexOf('subText') !== -1 ||
         args[0].className.indexOf('botText') !== -1 ||
@@ -36,7 +35,6 @@ const optimize = orig => function (...args) {
 };
 
 export default definePlugin({
-    _removeChild: null,
     name: "Open Optimizer",
     description: "Ports OpenAsar's optimizer code.",
     authors: [{ name: "S€th", id: 1273447359417942128n }],
