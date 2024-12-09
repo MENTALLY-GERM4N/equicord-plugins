@@ -5,6 +5,8 @@ const glob = new Glob("*/index.ts");
 const files = glob.scanSync(".");
 
 let readme = "# M€NT4LLY G€RM4N Vencord Plugins\n\n";
+readme += "## Installation\n\n"
+readme += "Follow the <a href=\"https://docs.vencord.dev/installing/custom-plugins\">offical guide</a> on the Vencord Docs\n"
 
 for (const file of files) {
     const { default: { name, description }} = await import(`./${file}`);
