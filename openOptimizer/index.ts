@@ -19,7 +19,7 @@
 import definePlugin from "@utils/types";
 
 export default definePlugin({
-    name: "Open Optimizer",
+    name: "OpenOptimizer",
     description: "Ports OpenAsar's optimizer code.",
     authors: [{ name: "S€th", id: 1273447359417942128n }],
     methods: ['removeChild', 'appendChild'],

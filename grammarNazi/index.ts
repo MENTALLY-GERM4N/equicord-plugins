@@ -29,7 +29,7 @@ const settings = definePluginSettings({
 });
 
 export default definePlugin({
-    name: "Grammar Nazi",
+    name: "GrammarNazi",
     description: "Automatic punctuation, capitalization, and word replacement.",
     authors: [{ name: "S€th", id: 1273447359417942128n }],
     dependencies: ["MessageEventsAPI"],
