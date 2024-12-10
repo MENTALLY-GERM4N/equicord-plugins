@@ -70,10 +70,8 @@ function GlobalBadges({ userId }: BadgeUserArgs) {
                     badge: `${API_URL}/badges/${mod}/${(badge as string).replace(mod, "").trim().split(" ")[0]}`
                 };
             } else if (typeof badge === "object") badge.custom = true;
-            if (!showCustom() && badge.custom) return;
             const cleanName = badge.name.replace(mod, "").trim();
-            const prefix = showPrefix() ? mod : "";
-            if (!badge.custom) badge.name = `${prefix} ${cleanName.charAt(0).toUpperCase() + cleanName.slice(1)}`;
+            if (!badge.custom) badge.name = `${mod} ${cleanName.charAt(0).toUpperCase() + cleanName.slice(1)}`;
             globalBadges.push(<BadgeComponent name={badge.name} img={badge.badge} />);
         });
     });
@@ -96,8 +94,6 @@ const Badge: ProfileBadge = {
     position: BadgePosition.START
 };
 
-const showPrefix = () => Vencord.Settings.plugins.GlobalBadges.showPrefix;
-const showCustom = () => Vencord.Settings.plugins.GlobalBadges.showCustom;
 
 export default definePlugin({
     name: "Global Badges Reloaded",
@@ -105,20 +101,5 @@ export default definePlugin({
     authors: [{ name: "S€th", id: 1273447359417942128n }],
 
     start: () => addBadge(Badge),
-    stop: () => removeBadge(Badge),
-
-    options: {
-        showPrefix: {
-            type: OptionType.BOOLEAN,
-            description: "Shows the Mod as Prefix",
-            default: true,
-            restartNeeded: false
-        },
-        showCustom: {
-            type: OptionType.BOOLEAN,
-            description: "Show Custom Badges",
-            default: true,
-            restartNeeded: false
-        }
-    }
+    stop: () => removeBadge(Badge)
 });
