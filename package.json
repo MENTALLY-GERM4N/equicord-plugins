@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@utils": "file:_utils",
-    "@webpack": "file:_webpack",
+    "@vencord/types": "^1.8.4",
     "@api": "file:_api",
     "tsx-dom": "^3.0.1"
   }

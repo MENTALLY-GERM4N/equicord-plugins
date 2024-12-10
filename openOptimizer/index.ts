@@ -24,13 +24,13 @@ export default definePlugin({
     authors: [{ name: "S€th", id: 1273447359417942128n }],
     methods: ['removeChild', 'appendChild'],
     start() {
-        for (const method of this.methods) {
+        for (const method of this.methods as (keyof Element)[]) {
             this[`_${method}`] = Element.prototype[method];
             Element.prototype[method] = this.optimize(Element.prototype[method]);
         }
     },
     stop() {
-        for (const method of this.methods) {
+        for (const method of this.methods as (keyof Element)[]) {
             Element.prototype[method] = this[`_${method}`];
         }
     },

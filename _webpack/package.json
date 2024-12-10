@@ -1,5 +1,0 @@
-{
-  "name": "webpack",
-  "type": "module",
-  "main": "findAll.ts"
-}

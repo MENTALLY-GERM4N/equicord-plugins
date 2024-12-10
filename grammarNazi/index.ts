@@ -10,7 +10,8 @@ import {
     type SendListener,
 } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
-import definePlugin, { OptionType } from "@utils/types";
+import definePlugin from "@utils/types";
+import OptionType from "@utils/types";
 
 const settings = definePluginSettings({
     autoCapitalization: {
@@ -27,56 +28,6 @@ const settings = definePluginSettings({
     },
 });
 
-const getPresend = dictionary => {
-    const presendObject: SendListener = (_, msg) => {
-        msg.content = msg.content.trim();
-        if (!msg.content.includes("```") && /\w/.test(msg.content.charAt(0))) {
-            if (settings.store.autoWordReplacement) {
-                const re = new RegExp(
-                    `(^|(?<=[^A-Z0-9]+))(${Object.keys(dictionary)
-                        .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-                        .join("|")})((?=[^A-Z0-9]+)|$)`,
-                    "gi",
-                );
-                if (re !== null) {
-                    msg.content = msg.content.replace(re, match => {
-                        return dictionary[match.toLowerCase()] || match;
-                    });
-                }
-            }
-
-            if (settings.store.autoPunctuation) {
-                if (
-                    /[A-Z0-9]/i.test(msg.content.charAt(msg.content.length - 1))
-                ) {
-                    if (
-                        !msg.content.startsWith(
-                            "http",
-                            msg.content.lastIndexOf(" ") + 1,
-                        )
-                    )
-                        msg.content += ".";
-                }
-            }
-
-            // Ensure sentences are capitalized after punctuation
-            if (settings.store.autoCapitalization) {
-                msg.content = msg.content.replace(/([.!?])\s*(\w)/g, match =>
-                    match.toUpperCase(),
-                );
-
-                // Ensure the first character of the entire message is capitalized
-                if (!msg.content.startsWith("http")) {
-                    msg.content =
-                        msg.content.charAt(0).toUpperCase() +
-                        msg.content.slice(1);
-                }
-            }
-        }
-    };
-    return presendObject;
-};
-
 export default definePlugin({
     name: "Grammar Nazi",
     description: "Automatic punctuation, capitalization, and word replacement.",
@@ -89,10 +40,10 @@ export default definePlugin({
         );
         dictionary = await dictionary.json();
 
-        addPreSendListener(getPresend(dictionary));
+        addPreSendListener(this.getPresend(dictionary));
     },
     stop() {
-        removePreSendListener(getPresend({}));
+        removePreSendListener(this.getPresend({}));
     },
 
     getPresend(dictionary: Object) {

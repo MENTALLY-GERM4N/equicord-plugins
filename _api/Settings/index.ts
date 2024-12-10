@@ -1,3 +1,1 @@
-const definePluginSettings = () => {}
-
-export {definePluginSettings}
+export type * from '@vencord/types/api/Settings'

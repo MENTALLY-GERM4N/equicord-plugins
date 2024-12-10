@@ -22,11 +22,6 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
-
-    "jsxImportSource": "tsx-dom",
-		"paths": {
-			"tsx-dom/jsx-dev-runtime": ["./node_modules/tsx-dom/src/jsx-runtime.ts"]
-		}
+    "noPropertyAccessFromIndexSignature": false
   }
 }

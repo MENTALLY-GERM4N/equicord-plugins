@@ -1,5 +1,2 @@
-const addPreSendListener = (a) => {}
-const removePreSendListener = (a) => {}
-type SendListener = object
-
-export { addPreSendListener, removePreSendListener, type SendListener }
+export type * from '@vencord/types/api/MessageEvents'
+export { addPreSendListener, removePreSendListener } from '@vencord/types/api/MessageEvents'

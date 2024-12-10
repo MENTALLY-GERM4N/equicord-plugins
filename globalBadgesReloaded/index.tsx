@@ -1,5 +1,5 @@
 import { addBadge, BadgePosition, BadgeUserArgs, ProfileBadge, removeBadge } from "@api/Badges";
-import definePlugin, { OptionType } from "@utils/types";
+import definePlugin from "@utils/types";
 import { React, Tooltip } from "@webpack/common";
 
 type CustomBadge = string | {
@@ -27,7 +27,8 @@ async function fetchBadges(id: string): Promise<BadgeCache["badges"] | undefined
         const body = await resp.json() as BadgeCache["badges"];
         cache.set(id, { badges: body, expires: Date.now() + EXPIRES });
         return body;
-    } else if (cachedValue) {
+    } 
+    if (cachedValue) {
         return cachedValue.badges;
     }
 };
