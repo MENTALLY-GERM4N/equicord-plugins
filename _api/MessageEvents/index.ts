@@ -1,6 +1,8 @@
 export type * from '@vencord/types/api/MessageEvents'
 
-const addPreSendListener = () => {}
-const removePreSendListener = () => {}
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const addPreSendListener = (listenr: any) => {}
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const removePreSendListener = (listener: any) => {}
 
 export { addPreSendListener, removePreSendListener }
