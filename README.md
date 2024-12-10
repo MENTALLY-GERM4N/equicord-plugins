@@ -3,7 +3,7 @@
 ## Open Optimizer <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/openOptimizer/index.ts"><kbd>Download</kbd></a>
 Ports OpenAsar's optimizer code.
 
-## GrammarFix <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/grammarNazi/index.ts"><kbd>Download</kbd></a>
+## Grammar Nazi <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/grammarNazi/index.ts"><kbd>Download</kbd></a>
 Automatic punctuation, capitalization, and word replacement.
 
 ## Global Badges Reloaded <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/globalBadgesReloaded/index.tsx"><kbd>Download</kbd></a>

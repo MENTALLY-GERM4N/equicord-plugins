@@ -7,7 +7,7 @@
 import {
     addPreSendListener,
     removePreSendListener,
-    SendListener,
+    type SendListener,
 } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
 import definePlugin, { OptionType } from "@utils/types";
@@ -78,7 +78,7 @@ const getPresend = dictionary => {
 };
 
 export default definePlugin({
-    name: "GrammarFix",
+    name: "Grammar Nazi",
     description: "Automatic punctuation, capitalization, and word replacement.",
     authors: [{ name: "S€th", id: 1273447359417942128n }],
     dependencies: ["MessageEventsAPI"],
