@@ -11,7 +11,7 @@ import {
 } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
 import definePlugin from "@utils/types";
-import OptionType from "@utils/types";
+import { OptionType } from "@utils/types";
 
 const settings = definePluginSettings({
     autoCapitalization: {
@@ -46,7 +46,7 @@ export default definePlugin({
         removePreSendListener(this.getPresend({}));
     },
 
-    getPresend(dictionary: Object) {
+    getPresend(dictionary: { [key: string]: string }) {
         const presendObject: SendListener = (_, msg) => {
             msg.content = msg.content.trim();
             if (!msg.content.includes("```") && /\w/.test(msg.content.charAt(0))) {

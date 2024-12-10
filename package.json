@@ -9,9 +9,10 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@api": "file:_api",
     "@utils": "file:_utils",
     "@vencord/types": "^1.8.4",
-    "@api": "file:_api",
-    "tsx-dom": "^3.0.1"
+    "tsx-dom": "^3.0.1",
+    "@webpack": "file:_webpack"
   }
 }

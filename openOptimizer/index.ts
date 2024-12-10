@@ -26,15 +26,18 @@ export default definePlugin({
     start() {
         for (const method of this.methods as (keyof Element)[]) {
             this[`_${method}`] = Element.prototype[method];
+            // @ts-ignore
             Element.prototype[method] = this.optimize(Element.prototype[method]);
         }
     },
     stop() {
         for (const method of this.methods as (keyof Element)[]) {
+            // @ts-ignore
             Element.prototype[method] = this[`_${method}`];
         }
     },
 
+    // @ts-ignore
     optimize: orig => function (...args) {
         if (typeof args[0].className === 'string' && (args[0].className.indexOf('activity') !== -1 ||
             args[0].className.indexOf('subText') !== -1 ||

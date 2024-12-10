@@ -1,0 +1,5 @@
+{
+  "name": "webpack",
+  "type": "module",
+  "main": "index.ts"
+}
