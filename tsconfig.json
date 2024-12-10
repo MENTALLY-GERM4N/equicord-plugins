@@ -25,10 +25,8 @@
     "baseUrl": ".",
     "paths": {
       "@vencord/*": ["node_modules/@vencord/*"],
-      "tsx-dom/jsx-dev-runtime": ["node_modules/tsx-dom/src/jsx-runtime"],
     },
 
         "jsx": "react-jsx",
-    "jsxImportSource": "tsx-dom"
   }
 }
