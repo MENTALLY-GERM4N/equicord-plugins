@@ -1,7 +1,7 @@
-export type * from '@vencord/types/api/Badges'
+export type * from "@vencord/types/api/Badges";
 
-const removeBadge = () => {}
-const addBadge = () => {}
-const BadgePosition = () => {}
+const removeBadge = () => {};
+const addBadge = () => {};
+const BadgePosition = () => {};
 
-export { removeBadge, addBadge, BadgePosition }
+export { removeBadge, addBadge, BadgePosition };

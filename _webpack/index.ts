@@ -1,5 +1,5 @@
-export type * from '@vencord/types/webpack'
+export type * from "@vencord/types/webpack";
 
-const findAll = () => {}
+const findAll = () => {};
 
-export { findAll }
+export { findAll };

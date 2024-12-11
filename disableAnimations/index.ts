@@ -14,40 +14,40 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 import definePlugin from "@utils/types";
 import { findAll } from "@webpack";
 
 export default definePlugin({
+	name: "DisableAnimations",
+	description: "Disables most of Discord's animations.",
+	authors: [{ name: "S€th", id: 1273447359417942128n }],
+	start() {
+		this.springs = findAll((mod) => {
+			if (!mod.Globals) return false;
+			return true;
+		});
 
-    name: "DisableAnimations",
-    description: "Disables most of Discord's animations.",
-    authors: [{ name: "S€th", id: 1273447359417942128n }],
-    start() {
-        this.springs = findAll((mod) => {
-            if (!mod.Globals) return false;
-            return true;
-        })
+		for (const spring of this.springs) {
+			spring.Globals.assign({
+				skipAnimation: true,
+			});
+		}
 
-        for (const spring of this.springs) {
-            spring.Globals.assign({
-                skipAnimation: true,
-            })
-        }
+		this.css = document.createElement("style");
+		this.css.innerText =
+			"* { transition: none !important; animation: none !important; }";
 
-        this.css = document.createElement("style");
-        this.css.innerText = "* { transition: none !important; animation: none !important; }";
+		document.head.appendChild(this.css);
+	},
+	stop() {
+		for (const spring of this.springs) {
+			spring.Globals.assign({
+				skipAnimation: false,
+			});
+		}
 
-        document.head.appendChild(this.css)
-    },
-    stop() {
-        for (const spring of this.springs) {
-            spring.Globals.assign({
-                skipAnimation: false,
-            })
-        }
-
-        if (this.css) this.css.remove();
-    }
+		if (this.css) this.css.remove();
+	},
 });
