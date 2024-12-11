@@ -10,7 +10,7 @@ const glob = new Glob("*/index.ts*");
 const files = glob.scanSync(".");
 
 let readme =
-	'# M€NT4LLY G€RM4N Vencord Plugins <a href="https://docs.vencord.dev/installing/custom-plugins"><kbd>Installation</kbd></a>\n\n';
+	'# M€NT4LLY G€RM4N *Equicord* Plugins <a href="https://docs.vencord.dev/installing/custom-plugins"><kbd>Installation</kbd></a>\n\n';
 
 for (const file of files) {
 	if (!file.startsWith("_")) {
