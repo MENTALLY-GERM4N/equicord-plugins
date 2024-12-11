@@ -39,7 +39,7 @@ export default definePlugin({
 
 	// @ts-ignore
 	optimize: (orig) =>
-        // @ts-ignore
+		// @ts-ignore
 		function (...args) {
 			if (
 				typeof args[0].className === "string" &&

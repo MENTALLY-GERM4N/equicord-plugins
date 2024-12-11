@@ -1,5 +1,11 @@
 import { $, write, Glob } from "bun";
 
+$`bunx @biomejs/biome format --write`;
+
+await $`git add .`.quiet();
+await $`git commit -m "Formatting."`.quiet();
+await $`git push`.quiet();
+
 const glob = new Glob("*/index.ts*");
 
 const files = glob.scanSync(".");
