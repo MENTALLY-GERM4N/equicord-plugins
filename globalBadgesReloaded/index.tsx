@@ -16,7 +16,6 @@ interface BadgeCache {
 }
 
 const API_URL = "https://badge.ipv4-army.workers.dev";
-const modLoader = globalThis?.Vencord?.Util?.EquicordDevs ? "Equicord" : "Vencord";
 
 const cache = new Map<string, BadgeCache>();
 const EXPIRES = 1000 * 60 * 15;
@@ -62,7 +61,7 @@ function GlobalBadges({ userId }: BadgeUserArgs) {
     const globalBadges: JSX.Element[] = [];
 
     Object.keys(badges).forEach(mod => {
-        if (mod === modLoader) return;
+        if (mod.toLowerCase() === "equicord") return; // I give up, and I don't use Vencord
         badges[mod].forEach(badge => {
             if (typeof badge === "string") {
                 const fullNames = { "hunter": "Bug Hunter", "early": "Early User" };
