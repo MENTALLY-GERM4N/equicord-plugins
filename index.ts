@@ -8,7 +8,7 @@ await $`git commit -m "Formatting."`.quiet();
 const glob = new Glob("*/index.ts*");
 
 const files = glob.scanSync(".");
-
+console.log(files)
 let readme =
 	'# M€NT4LLY G€RM4N *Equicord* Plugins <a href="https://docs.vencord.dev/installing/custom-plugins"><kbd>Installation</kbd></a>\nFor support please visit the [Equicord Discord Server](https://discord.gg/6remVCPg) and ping `<@1273447359417942128>` in the #support channel\n\n';
 
