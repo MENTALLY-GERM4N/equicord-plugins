@@ -24,7 +24,8 @@ for (const file of files) {
 }
 
 await write("README.md", readme);
-
+/*
 await $`git add .`.quiet();
 await $`git commit -m "Update"`.quiet();
 await $`git push`.quiet();
+*/
