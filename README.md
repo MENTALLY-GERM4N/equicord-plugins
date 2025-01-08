@@ -16,3 +16,6 @@ Disables most of Discord's animations.
 ## ClientSideBlockIndi <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/blockIndi/index.tsx"><kbd>Download</kbd></a>
 Allows you to locally hide almost all content from Indi
 
+## BetterBadge <a href="https://github.com/MENTALLY-GERM4N/vencord-plugins/raw/refs/heads/main/betterBadge/index.ts"><kbd>Download</kbd></a>
+use the DiscordNative badge counter.
+
