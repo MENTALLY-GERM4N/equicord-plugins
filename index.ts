@@ -3,8 +3,9 @@ import { $, write, Glob } from "bun";
 $`bunx @biomejs/biome format --write`;
 
 await $`git add .`.quiet();
+try {
 await $`git commit -m "Formatting."`.quiet();
-
+} catch {}
 const glob = new Glob("*/index.ts*");
 
 const files = glob.scanSync(".");
