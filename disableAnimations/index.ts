@@ -29,6 +29,10 @@ export default definePlugin({
 			return true;
 		});
 
+		this.hasFocus = document.hasFocus;
+
+		document.hasFocus = () => { return false; };
+
 		for (const spring of this.springs) {
 			spring.Globals.assign({
 				skipAnimation: true,
@@ -47,6 +51,8 @@ export default definePlugin({
 				skipAnimation: false,
 			});
 		}
+
+		document.hasFocus = this.hasFocus;
 
 		if (this.css) this.css.remove();
 	},
