@@ -4,8 +4,8 @@ $`bunx @biomejs/biome format --write`;
 
 await $`git add .`.quiet();
 try {
-await $`git commit -m "Formatting."`.quiet();
-} catch {}
+	await $`git commit -m "Formatting."`.quiet();
+} catch { }
 const glob = new Glob("*/index.ts*");
 
 const files = glob.scanSync(".");
@@ -27,5 +27,11 @@ for (const file of files) {
 await write("README.md", readme);
 
 await $`git add .`.quiet();
-await $`git commit -m "Update"`.quiet();
-await $`git push`.quiet();
+try {
+	await $`git commit -m "Update"`.quiet();
+} catch { }
+try {
+	await $`git push`
+} catch {
+	console.log("Failed to push.");
+}
